@@ -1,0 +1,29 @@
+<head>
+  <script>
+    function track() {
+      fetch('/api/track')
+      .then(res => res.text())
+      .then(msg => console.log(msg))
+      .catch(err => console.log(err));
+    }
+
+    function untrack() {
+      fetch('/api/untrack')
+      .then(res => res.text())
+      .then(msg => console.log(msg))
+      .catch(err => console.log(err));
+    }
+
+    function info() {
+      fetch('/api/info')
+      .then(res => res.json())
+      .then(msg => console.log(msg))
+      .catch(err => console.log(err));
+    }
+  </script>
+</head>
+<body>
+  <button onclick="track()">Track me</button>
+  <button onclick="untrack()">Don't track me</button>
+  <button onclick="info()">Show stats</button>
+</body>
